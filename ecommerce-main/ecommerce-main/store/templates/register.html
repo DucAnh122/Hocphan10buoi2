@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+<!-- Phần nội dung hiển thị-->
+{% block content %}
+    <center>
+        <form action = '.' method = 'POST'>
+            <!--Tạo bảo mật tránh kĩ thuật tấn công csrf, bắt buộc khi tạo form-->
+            {% csrf_token %} 
+            {{form.as_p}} 
+            <input type = "submit" value="Dang ky">
+        </form>
+    </center>
+{% endblock %}
